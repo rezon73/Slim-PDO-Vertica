@@ -8,6 +8,7 @@
 namespace Rezon73\PDO\Test;
 
 use Rezon73\PDO\Clause;
+use Rezon73\PDO\PDOVertica;
 use Rezon73\PDO\Statement;
 use PDO;
 use PDOStatement;
@@ -29,7 +30,7 @@ class UpdateTest extends TestCase
         $stmt->method('rowCount')
             ->willReturn(1);
 
-        $pdo = $this->createMock(PDO::class);
+        $pdo = $this->createMock(PDOVertica::class);
         $pdo->method('prepare')
             ->with($this->anything())
             ->willReturn($stmt);

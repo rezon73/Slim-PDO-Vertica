@@ -8,6 +8,7 @@
 namespace Rezon73\PDO\Test;
 
 use FaapZ\PDO\Clause;
+use Rezon73\PDO\PDOVertica;
 use Rezon73\PDO\Statement;
 use PDO;
 use PHPUnit\Framework\TestCase;
@@ -21,7 +22,7 @@ class SelectTest extends TestCase
     {
         parent::setUp();
 
-        $this->subject = new Statement\Select($this->createMock(PDO::class));
+        $this->subject = new Statement\Select($this->createMock(PDOVertica::class));
     }
 
     public function testToString()
@@ -45,7 +46,7 @@ class SelectTest extends TestCase
     public function testToStringWithColumnSubQuery()
     {
         $this->subject
-            ->columns(['sub' => (new Statement\Select($this->createMock(PDO::class)))->from('test2')])
+            ->columns(['sub' => (new Statement\Select($this->createMock(PDOVertica::class)))->from('test2')])
             ->from('test1');
 
         $this->assertStringEndsWith('(SELECT * FROM test2) AS sub FROM test1', $this->subject->__toString());
@@ -62,7 +63,7 @@ class SelectTest extends TestCase
     public function testToStringWithTableSubQuery()
     {
         $this->subject
-            ->from(['sub' => (new Statement\Select($this->createMock(PDO::class)))->from('test')]);
+            ->from(['sub' => (new Statement\Select($this->createMock(PDOVertica::class)))->from('test')]);
 
         $this->assertEquals('SELECT * FROM (SELECT * FROM test) AS sub', $this->subject->__toString());
     }
@@ -204,7 +205,7 @@ class SelectTest extends TestCase
             ->columns(['id', 'name'])
             ->from('test1')
             ->union(
-                (new Statement\Select($this->createMock(PDO::class)))
+                (new Statement\Select($this->createMock(PDOVertica::class)))
                     ->columns(['id', 'name'])
                     ->from('test2')
             );

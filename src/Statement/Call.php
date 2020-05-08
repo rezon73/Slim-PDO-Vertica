@@ -11,6 +11,7 @@ use Rezon73\PDO\AbstractStatement;
 use Rezon73\PDO\Clause;
 use PDO;
 use PDOStatement;
+use Rezon73\PDO\PDOVertica;
 
 /**
  * @method PDOStatement execute()
@@ -24,7 +25,7 @@ class Call extends AbstractStatement
      * @param PDO                $dbh
      * @param Clause\Method|null $procedure
      */
-    public function __construct(PDO $dbh, ?Clause\Method $procedure = null)
+    public function __construct(PDOVertica $dbh, ?Clause\Method $procedure = null)
     {
         parent::__construct($dbh);
 

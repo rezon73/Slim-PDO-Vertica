@@ -8,6 +8,7 @@
 namespace Rezon73\PDO\Statement;
 
 use Rezon73\PDO\AdvancedStatement;
+use Rezon73\PDO\PDOVertica;
 use Rezon73\PDO\QueryInterface;
 use PDO;
 
@@ -23,7 +24,7 @@ class Update extends AdvancedStatement
      * @param PDO                  $dbh
      * @param array<string, mixed> $pairs
      */
-    public function __construct(PDO $dbh, array $pairs = [])
+    public function __construct(PDOVertica $dbh, array $pairs = [])
     {
         parent::__construct($dbh);
 

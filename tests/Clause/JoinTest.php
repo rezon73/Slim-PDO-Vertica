@@ -8,6 +8,7 @@
 namespace Rezon73\PDO\Test;
 
 use Rezon73\PDO\Clause;
+use Rezon73\PDO\PDOVertica;
 use Rezon73\PDO\Statement;
 use PDO;
 use PHPUnit\Framework\TestCase;
@@ -61,7 +62,7 @@ class JoinTest extends TestCase
     public function testToStringWithSelectTableAlias()
     {
         $subject = new Clause\Join(
-            ['alias' => (new Statement\Select($this->createMock(PDO::class)))->from('table')],
+            ['alias' => (new Statement\Select($this->createMock(PDOVertica::class)))->from('table')],
             new Clause\Conditional('column1', '=', 'value1')
         );
 

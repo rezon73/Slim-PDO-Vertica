@@ -9,7 +9,7 @@ namespace Rezon73\PDO;
 
 use PDO;
 
-class Database extends PDO
+class Database extends PDOVertica
 {
     /**
      * @param string            $dsn
@@ -21,7 +21,7 @@ class Database extends PDO
      */
     public function __construct(string $dsn, string $username = null, string $password = null, array $options = [])
     {
-        parent::__construct($dsn, $username, $password, $options + $this->getDefaultOptions());
+        parent::__construct($dsn, $username, $password, array_merge($this->getDefaultOptions(), $options));
     }
 
     /**

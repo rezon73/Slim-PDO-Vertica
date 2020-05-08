@@ -12,13 +12,13 @@ use PDOException;
 
 abstract class AbstractStatement implements QueryInterface
 {
-    /** @var PDO $dbh */
+    /** @var PDOVertica $dbh */
     protected $dbh;
 
     /**
      * @param PDO $dbh
      */
-    public function __construct(PDO $dbh)
+    public function __construct(PDOVertica $dbh)
     {
         $this->dbh = $dbh;
     }
@@ -35,10 +35,10 @@ abstract class AbstractStatement implements QueryInterface
         try {
             $success = $stmt->execute($this->getValues());
             if (!$success) {
-                list($state, $code, $message) = $stmt->errorInfo();
+                //list($state, $code, $message) = $stmt->errorInfo();
 
                 // We are not in exception mode, raise error.
-                trigger_error("SQLSTATE[{$state}] [{$code}] {$message}", E_USER_ERROR);
+                //trigger_error("SQLSTATE[{$state}] [{$code}] {$message}", E_USER_ERROR);
             }
         } catch (PDOException $e) {
             // We are in exception mode, carry on.

@@ -9,6 +9,7 @@ namespace Rezon73\PDO\Statement;
 
 use Rezon73\PDO\AdvancedStatement;
 use PDO;
+use Rezon73\PDO\PDOVertica;
 
 class Delete extends AdvancedStatement
 {
@@ -19,7 +20,7 @@ class Delete extends AdvancedStatement
      * @param PDO                               $dbh
      * @param string|array<string, string>|null $table
      */
-    public function __construct(PDO $dbh, $table = null)
+    public function __construct(PDOVertica $dbh, $table = null)
     {
         parent::__construct($dbh);
 

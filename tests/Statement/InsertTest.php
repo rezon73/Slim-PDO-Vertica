@@ -8,6 +8,7 @@
 namespace Rezon73\PDO\Test;
 
 use Rezon73\PDO\Clause;
+use Rezon73\PDO\PDOVertica;
 use Rezon73\PDO\Statement;
 use PDO;
 use PDOStatement;
@@ -27,7 +28,7 @@ class InsertTest extends TestCase
             ->with($this->anything())
             ->willReturn($stmt);
 
-        $pdo = $this->createMock(PDO::class);
+        $pdo = $this->createMock(PDOVertica::class);
         $pdo->method('prepare')
             ->with($this->anything())
             ->willReturn($stmt);
@@ -103,7 +104,7 @@ class InsertTest extends TestCase
 
     public function testToStringWithSelect()
     {
-        $select = new Statement\Select($this->createMock(PDO::class));
+        $select = new Statement\Select($this->createMock(PDOVertica::class));
         $select->from('table');
 
         $this->subject
@@ -119,7 +120,7 @@ class InsertTest extends TestCase
         $this->expectError();
         $this->expectErrorMessageMatches('/^Ignoring additional values after select for insert statement/');
 
-        $select = new Statement\Select($this->createMock(PDO::class));
+        $select = new Statement\Select($this->createMock(PDOVertica::class));
         $select->from('table');
 
         $this->subject

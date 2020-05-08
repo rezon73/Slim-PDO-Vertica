@@ -9,6 +9,7 @@ namespace Rezon73\PDO\Statement;
 
 use Rezon73\PDO\AbstractStatement;
 use Rezon73\PDO\Clause\Raw;
+use Rezon73\PDO\PDOVertica;
 use Rezon73\PDO\QueryInterface;
 use PDO;
 
@@ -30,10 +31,10 @@ class Insert extends AbstractStatement
     protected $update = [];
 
     /**
-     * @param PDO                  $dbh
+     * @param PDOVertica           $dbh
      * @param array<string, mixed> $pairs
      */
-    public function __construct(PDO $dbh, array $pairs = [])
+    public function __construct(PDOVertica $dbh, array $pairs = [])
     {
         parent::__construct($dbh);
 

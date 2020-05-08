@@ -13,6 +13,7 @@ use PDOException;
 use PDOStatement;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Rezon73\PDO\PDOVertica;
 
 class AbstractStatementTest extends TestCase
 {
@@ -34,7 +35,7 @@ class AbstractStatementTest extends TestCase
                 2 => 'near "bogus": syntax error',
             ]);
 
-        $pdo = $this->createMock(PDO::class);
+        $pdo = $this->createMock(PDOVertica::class);
         $pdo->method('prepare')
             ->with($this->equalTo('toString'))
             ->willReturn($this->mock);

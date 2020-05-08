@@ -9,6 +9,7 @@ namespace Rezon73\PDO\Statement;
 
 use Rezon73\PDO\AdvancedStatement;
 use Rezon73\PDO\Clause;
+use Rezon73\PDO\PDOVertica;
 use Rezon73\PDO\QueryInterface;
 use PDO;
 use PDOStatement;
@@ -40,7 +41,7 @@ class Select extends AdvancedStatement
      * @param PDO                      $dbh
      * @param string[]|Clause\Method[] $columns
      */
-    public function __construct(PDO $dbh, array $columns = ['*'])
+    public function __construct(PDOVertica $dbh, array $columns = ['*'])
     {
         parent::__construct($dbh);
 

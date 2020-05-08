@@ -8,6 +8,7 @@
 namespace Rezon73\PDO\Test;
 
 use Rezon73\PDO\Clause;
+use Rezon73\PDO\PDOVertica;
 use Rezon73\PDO\Statement;
 use PDO;
 use PHPUnit\Framework\TestCase;
@@ -21,7 +22,7 @@ class CallTest extends TestCase
     {
         parent::setUp();
 
-        $this->subject = new Statement\Call($this->createMock(PDO::class));
+        $this->subject = new Statement\Call($this->createMock(PDOVertica::class));
     }
 
     public function testToString()

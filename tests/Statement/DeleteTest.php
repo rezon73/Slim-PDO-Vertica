@@ -8,6 +8,7 @@
 namespace Rezon73\PDO\Test;
 
 use Rezon73\PDO\Clause;
+use Rezon73\PDO\PDOVertica;
 use Rezon73\PDO\Statement;
 use PDO;
 use PDOStatement;
@@ -32,7 +33,7 @@ class DeleteTest extends TestCase
         $stmt->method('rowCount')
             ->willReturn(1);
 
-        $this->pdo = $this->createMock(PDO::class);
+        $this->pdo = $this->createMock(PDOVertica::class);
         $this->pdo->method('prepare')
             ->with($this->anything())
             ->willReturn($stmt);
