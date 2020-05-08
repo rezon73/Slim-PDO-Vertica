@@ -22,7 +22,7 @@ class Call extends AbstractStatement
     protected $method;
 
     /**
-     * @param PDO                $dbh
+     * @param PDOVertica         $dbh
      * @param Clause\Method|null $procedure
      */
     public function __construct(PDOVertica $dbh, ?Clause\Method $procedure = null)

@@ -22,6 +22,6 @@ class PDOVertica
         odbc_execute($stmt);
         $res = odbc_fetch_array($stmt);
         
-        return $res['LAST_INSERT_ID'];
+        return $res['LAST_INSERT_ID'] ?? null;
     }
 }

@@ -224,4 +224,14 @@ class Insert extends AbstractStatement
 
         return $values;
     }
+
+    /**
+     * @return int|string
+     */
+    public function execute()
+    {
+        parent::execute();
+
+        return $this->dbh->lastInsertId();
+    }
 }

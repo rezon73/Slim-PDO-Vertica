@@ -2,7 +2,7 @@
 
 namespace Rezon73\PDO;
 
-class PDOVerticaStatement extends \PDO
+class PDOVerticaStatement
 {
     protected $qry;
     protected $param;
@@ -31,12 +31,15 @@ class PDOVerticaStatement extends \PDO
             }
         }
 
-        if($this->param == null)
-            odbc_execute($this->stmt);
-        else
-            odbc_execute($this->stmt, $this->param);
+        if($this->param == null) {
+            $result = odbc_execute($this->stmt);
+        } else {
+            $result = odbc_execute($this->stmt, $this->param);
+        }
 
         $this->clearParam();
+
+        return $result;
     }
 
     public function fetch($option = null)
@@ -54,15 +57,25 @@ class PDOVerticaStatement extends \PDO
         return $rows;
     }
 
+    public function rowCount()
+    {
+        return odbc_num_rows($this->stmt);
+    }
+
+    public function errorInfo(): string
+    {
+        return odbc_errormsg($this->stmt);
+    }
+
     protected function extractParam($qry)
     {
         $qryArray = explode(" ", $qry);
         $ind = 0;
 
-        while(isset($qryArray[$ind]))
-        {
-            if(preg_match("/^:/", $qryArray[$ind]))
+        while (isset($qryArray[$ind])) {
+            if (preg_match("/^:/", $qryArray[$ind])) {
                 $this->param[$qryArray[$ind]] = null;
+            }
 
             ++$ind;
         }
@@ -72,8 +85,7 @@ class PDOVerticaStatement extends \PDO
     {
         $ind = 0;
 
-        while(isset($this->param[$ind]))
-        {
+        while(isset($this->param[$ind])) {
             $this->param[$ind] = null;
             ++$ind;
         }

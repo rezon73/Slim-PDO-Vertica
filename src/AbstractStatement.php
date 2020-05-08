@@ -7,7 +7,6 @@
 
 namespace Rezon73\PDO;
 
-use PDO;
 use PDOException;
 
 abstract class AbstractStatement implements QueryInterface
@@ -16,7 +15,7 @@ abstract class AbstractStatement implements QueryInterface
     protected $dbh;
 
     /**
-     * @param PDO $dbh
+     * @param PDOVertica $dbh
      */
     public function __construct(PDOVertica $dbh)
     {
@@ -26,7 +25,7 @@ abstract class AbstractStatement implements QueryInterface
     /**
      * @throws PDOException
      *
-     * @return mixed
+     * @return bool|\PDOStatement|PDOVerticaStatement
      */
     public function execute()
     {
@@ -35,10 +34,10 @@ abstract class AbstractStatement implements QueryInterface
         try {
             $success = $stmt->execute($this->getValues());
             if (!$success) {
-                //list($state, $code, $message) = $stmt->errorInfo();
+                list($state, $code, $message) = $stmt->errorInfo();
 
                 // We are not in exception mode, raise error.
-                //trigger_error("SQLSTATE[{$state}] [{$code}] {$message}", E_USER_ERROR);
+                trigger_error("SQLSTATE[{$state}] [{$code}] {$message}", E_USER_ERROR);
             }
         } catch (PDOException $e) {
             // We are in exception mode, carry on.
