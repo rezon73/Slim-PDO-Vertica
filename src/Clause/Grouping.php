@@ -43,8 +43,17 @@ class Grouping extends Conditional
     {
         $sql = '';
         foreach ($this->value as $clause) {
+            $operator = $this->operator;
+            if (is_null($clause)) {
+                if ($operator == '=') {
+                    $operator = 'is';
+                } elseif ($operator == '!=') {
+                    $operator = 'is not';
+                }
+            }
+
             if (!empty($sql)) {
-                $sql .= " {$this->operator} ";
+                $sql .= " {$operator} ";
             }
 
             if ($clause instanceof self) {

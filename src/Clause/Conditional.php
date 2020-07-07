@@ -74,6 +74,14 @@ class Conditional implements QueryInterface
      */
     public function __toString(): string
     {
+        if (is_null($this->value)) {
+            if ($this->operator == '=') {
+                $this->operator = 'is';
+            } elseif ($this->operator == '!=') {
+                $this->operator = 'is not';
+            }
+        }
+
         $sql = "{$this->column} {$this->operator} ";
         switch ($this->operator) {
             case 'BETWEEN':
