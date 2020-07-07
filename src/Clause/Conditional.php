@@ -62,6 +62,9 @@ class Conditional implements QueryInterface
     protected function getPlaceholder($value): string
     {
         $placeholder = '?';
+        if (is_null($value)) {
+            $placeholder = 'null';
+        }
         if ($value instanceof QueryInterface) {
             $placeholder = "{$value}";
         }

@@ -20,7 +20,9 @@ class PDOVerticaStatement
 
     public function bindValue($param, $val)
     {
-        $this->param[$param] = $val;
+        if (!is_null($val)) {
+            $this->param[$param] = $val;
+        }
     }
 
     public function execute($params = [])
