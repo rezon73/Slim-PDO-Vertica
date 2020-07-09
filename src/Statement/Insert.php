@@ -5,12 +5,11 @@
  * @license http://opensource.org/licenses/MIT
  */
 
-namespace Rezon73\PDO\Statement;
+namespace Rezon73\PDOVertica\Statement;
 
-use Rezon73\PDO\AbstractStatement;
-use Rezon73\PDO\Clause\Raw;
-use Rezon73\PDO\PDOVertica;
-use Rezon73\PDO\QueryInterface;
+use Rezon73\PDOVertica\AbstractStatement;
+use Rezon73\PDOVertica\Clause\Raw;
+use Rezon73\PDOVertica\QueryInterface;
 use PDO;
 
 class Insert extends AbstractStatement

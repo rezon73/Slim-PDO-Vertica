@@ -5,11 +5,11 @@
  * @license http://opensource.org/licenses/MIT
  */
 
-namespace Rezon73\PDO\Statement;
+namespace Rezon73\PDOVertica\Statement;
 
-use Rezon73\PDO\AdvancedStatement;
+use Rezon73\PDOVertica\AdvancedStatement;
 use PDO;
-use Rezon73\PDO\PDOVertica;
+use Rezon73\PDOVertica\PDOVertica;
 
 class Delete extends AdvancedStatement
 {

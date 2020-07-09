@@ -5,7 +5,7 @@
  * @license http://opensource.org/licenses/MIT
  */
 
-namespace Rezon73\PDO\Clause;
+namespace Rezon73\PDOVertica\Clause;
 
 class Grouping extends Conditional
 {

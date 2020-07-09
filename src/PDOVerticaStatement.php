@@ -1,6 +1,6 @@
 <?php
 
-namespace Rezon73\PDO;
+namespace Rezon73\PDOVertica;
 
 class PDOVerticaStatement
 {

@@ -5,7 +5,7 @@
  * @license http://opensource.org/licenses/MIT
  */
 
-namespace Rezon73\PDO;
+namespace Rezon73\PDOVertica;
 
 use PDOException;
 

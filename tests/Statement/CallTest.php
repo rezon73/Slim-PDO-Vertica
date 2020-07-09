@@ -5,11 +5,11 @@
  * @license http://opensource.org/licenses/MIT
  */
 
-namespace Rezon73\PDO\Test;
+namespace Rezon73\PDOVertica\Test;
 
-use Rezon73\PDO\Clause;
-use Rezon73\PDO\PDOVertica;
-use Rezon73\PDO\Statement;
+use Rezon73\PDOVertica\Clause;
+use Rezon73\PDOVertica\PDOVertica;
+use Rezon73\PDOVertica\Statement;
 use PDO;
 use PHPUnit\Framework\TestCase;
 

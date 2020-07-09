@@ -5,15 +5,15 @@
  * @license http://opensource.org/licenses/MIT
  */
 
-namespace Rezon73\PDO\Test;
+namespace Rezon73\PDOVertica\Test;
 
-use Rezon73\PDO\AbstractStatement;
+use Rezon73\PDOVertica\AbstractStatement;
 use PDO;
 use PDOException;
 use PDOStatement;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Rezon73\PDO\PDOVertica;
+use Rezon73\PDOVertica\PDOVertica;
 
 class AbstractStatementTest extends TestCase
 {

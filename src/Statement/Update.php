@@ -5,11 +5,11 @@
  * @license http://opensource.org/licenses/MIT
  */
 
-namespace Rezon73\PDO\Statement;
+namespace Rezon73\PDOVertica\Statement;
 
-use Rezon73\PDO\AdvancedStatement;
-use Rezon73\PDO\PDOVertica;
-use Rezon73\PDO\QueryInterface;
+use Rezon73\PDOVertica\AdvancedStatement;
+use Rezon73\PDOVertica\PDOVertica;
+use Rezon73\PDOVertica\QueryInterface;
 use PDO;
 
 class Update extends AdvancedStatement

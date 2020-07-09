@@ -41,12 +41,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Rezon73\\PDO\\": "src/"
+            "Rezon73\\PDOVertica\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rezon73\\PDO\\Test\\": "tests/"
+            "Rezon73\\PDOVertica\\Test\\": "tests/"
         }
     },
     "minimum-stability": "stable",

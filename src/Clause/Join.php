@@ -5,10 +5,10 @@
  * @license http://opensource.org/licenses/MIT
  */
 
-namespace Rezon73\PDO\Clause;
+namespace Rezon73\PDOVertica\Clause;
 
-use Rezon73\PDO\QueryInterface;
-use Rezon73\PDO\Statement\Select;
+use Rezon73\PDOVertica\QueryInterface;
+use Rezon73\PDOVertica\Statement\Select;
 
 class Join implements QueryInterface
 {

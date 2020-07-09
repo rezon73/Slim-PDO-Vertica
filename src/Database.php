@@ -5,7 +5,7 @@
  * @license http://opensource.org/licenses/MIT
  */
 
-namespace Rezon73\PDO;
+namespace Rezon73\PDOVertica;
 
 use PDO;
 
@@ -41,50 +41,50 @@ class Database extends PDOVertica
     /**
      * @param Clause\Method|null $procedure
      *
-     * @return Statement\Call
+     * @return Rezon73\PDOVertica\Statement\Call
      */
-    public function call(Clause\Method $procedure = null): Statement\Call
+    public function call(Clause\Method $procedure = null): Rezon73\PDOVertica\Statement\Call
     {
-        return new Statement\Call($this, $procedure);
+        return new Rezon73\PDOVertica\Statement\Call($this, $procedure);
     }
 
     /**
      * @param array<int|string, string> $columns
      *
-     * @return Statement\Select
+     * @return Rezon73\PDOVertica\Statement\Select
      */
-    public function select(array $columns = ['*']): Statement\Select
+    public function select(array $columns = ['*']): Rezon73\PDOVertica\Statement\Select
     {
-        return new Statement\Select($this, $columns);
+        return new Rezon73\PDOVertica\Statement\Select($this, $columns);
     }
 
     /**
      * @param array<int|string, mixed> $pairs
      *
-     * @return Statement\Insert
+     * @return Rezon73\PDOVertica\Statement\Insert
      */
-    public function insert(array $pairs = []): Statement\Insert
+    public function insert(array $pairs = []): Rezon73\PDOVertica\Statement\Insert
     {
-        return new Statement\Insert($this, $pairs);
+        return new Rezon73\PDOVertica\Statement\Insert($this, $pairs);
     }
 
     /**
      * @param array<string, mixed> $pairs
      *
-     * @return Statement\Update
+     * @return Rezon73\PDOVertica\Statement\Update
      */
-    public function update(array $pairs = []): Statement\Update
+    public function update(array $pairs = []): Rezon73\PDOVertica\Statement\Update
     {
-        return new Statement\Update($this, $pairs);
+        return new Rezon73\PDOVertica\Statement\Update($this, $pairs);
     }
 
     /**
      * @param string|array<string, string> $table
      *
-     * @return Statement\Delete
+     * @return Rezon73\PDOVertica\Statement\Delete
      */
-    public function delete($table = null): Statement\Delete
+    public function delete($table = null): Rezon73\PDOVertica\Statement\Delete
     {
-        return new Statement\Delete($this, $table);
+        return new Rezon73\PDOVertica\Statement\Delete($this, $table);
     }
 }

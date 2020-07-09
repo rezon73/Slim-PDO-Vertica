@@ -5,13 +5,13 @@
  * @license http://opensource.org/licenses/MIT
  */
 
-namespace Rezon73\PDO\Statement;
+namespace Rezon73\PDOVertica\Statement;
 
-use Rezon73\PDO\AbstractStatement;
-use Rezon73\PDO\Clause;
+use Rezon73\PDOVertica\AbstractStatement;
+use Rezon73\PDOVertica\Clause;
 use PDO;
 use PDOStatement;
-use Rezon73\PDO\PDOVertica;
+use Rezon73\PDOVertica\PDOVertica;
 
 /**
  * @method PDOStatement execute()

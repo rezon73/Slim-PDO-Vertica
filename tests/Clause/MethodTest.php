@@ -5,9 +5,9 @@
  * @license http://opensource.org/licenses/MIT
  */
 
-namespace Rezon73\PDO\Test;
+namespace Rezon73\PDOVertica\Test;
 
-use Rezon73\PDO\Clause;
+use Rezon73\PDOVertica\Clause;
 use PHPUnit\Framework\TestCase;
 
 class MethodTest extends TestCase
