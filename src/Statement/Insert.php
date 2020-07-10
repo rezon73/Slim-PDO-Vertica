@@ -9,6 +9,7 @@ namespace Rezon73\PDOVertica\Statement;
 
 use Rezon73\PDOVertica\AbstractStatement;
 use Rezon73\PDOVertica\Clause\Raw;
+use Rezon73\PDOVertica\PDOVertica;
 use Rezon73\PDOVertica\QueryInterface;
 use PDO;
 

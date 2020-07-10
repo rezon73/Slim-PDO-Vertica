@@ -41,50 +41,50 @@ class Database extends PDOVertica
     /**
      * @param Clause\Method|null $procedure
      *
-     * @return Rezon73\PDOVertica\Statement\Call
+     * @return Statement\Call
      */
-    public function call(Clause\Method $procedure = null): Rezon73\PDOVertica\Statement\Call
+    public function call(Clause\Method $procedure = null): Statement\Call
     {
-        return new Rezon73\PDOVertica\Statement\Call($this, $procedure);
+        return new Statement\Call($this, $procedure);
     }
 
     /**
      * @param array<int|string, string> $columns
      *
-     * @return Rezon73\PDOVertica\Statement\Select
+     * @return Statement\Select
      */
-    public function select(array $columns = ['*']): Rezon73\PDOVertica\Statement\Select
+    public function select(array $columns = ['*']): Statement\Select
     {
-        return new Rezon73\PDOVertica\Statement\Select($this, $columns);
+        return new Statement\Select($this, $columns);
     }
 
     /**
      * @param array<int|string, mixed> $pairs
      *
-     * @return Rezon73\PDOVertica\Statement\Insert
+     * @return Statement\Insert
      */
-    public function insert(array $pairs = []): Rezon73\PDOVertica\Statement\Insert
+    public function insert(array $pairs = []): Statement\Insert
     {
-        return new Rezon73\PDOVertica\Statement\Insert($this, $pairs);
+        return new Statement\Insert($this, $pairs);
     }
 
     /**
      * @param array<string, mixed> $pairs
      *
-     * @return Rezon73\PDOVertica\Statement\Update
+     * @return Statement\Update
      */
-    public function update(array $pairs = []): Rezon73\PDOVertica\Statement\Update
+    public function update(array $pairs = []): Statement\Update
     {
-        return new Rezon73\PDOVertica\Statement\Update($this, $pairs);
+        return new Statement\Update($this, $pairs);
     }
 
     /**
      * @param string|array<string, string> $table
      *
-     * @return Rezon73\PDOVertica\Statement\Delete
+     * @return Statement\Delete
      */
-    public function delete($table = null): Rezon73\PDOVertica\Statement\Delete
+    public function delete($table = null): Statement\Delete
     {
-        return new Rezon73\PDOVertica\Statement\Delete($this, $table);
+        return new Statement\Delete($this, $table);
     }
 }
