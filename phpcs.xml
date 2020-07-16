@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="FaaPz PDO">
+<ruleset name="Rezon73 PDOClickHouse">
     <description>Just another PDO database library</description>
 
     <file>src/</file>
