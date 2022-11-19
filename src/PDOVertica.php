@@ -23,7 +23,7 @@ class PDOVertica
 
     public function exec($qry, $flags = null)
     {
-        return odbc_exec($this->conn, $qry, $flags);
+        return odbc_exec($this->conn, $qry);
     }
 
     public function lastInsertId()
